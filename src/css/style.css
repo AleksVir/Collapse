@@ -1,0 +1,314 @@
+* {
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/*Collapse*/
+
+.collapse {
+  width: 500px;
+  margin-top: 20px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+}
+
+button.start__btn {
+  width: 120px;
+  height: 35px;
+  background-color: rgb(0, 72, 85);
+  font-size: 1.2rem;
+  color: white;
+  border-radius: 8px;
+}
+
+p.widget__text {
+  border: 1px solid rgb(250, 248, 248);
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.widget__body {
+  margin-top: 20px;
+  height: 0;
+  margin-bottom: -20px;
+
+  font-size: 1.2rem;
+  line-height: 1.4;
+  overflow: hidden;
+  transition: all 0.5s ease 0s;
+}
+
+.active {
+  height: 130px;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  transition: height 0.5s ease 0s;
+}
+
+button.form__btn {
+  display: block;
+  margin-top: 260px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: rgb(143, 4, 32);
+  transition: 0.2s linear;
+}
+
+/*Chat__widget */
+
+.chat__widget {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  height: 350px;
+  width: 500px;
+  display: flex;
+  justify-content: end;
+}
+.chat__btn-block {
+  margin-right: 20px;
+}
+
+button.form__btn:hover {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background-color: rgb(7, 196, 196);
+  cursor: pointer;
+}
+
+form.form__feedback {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(44, 224, 236);
+  border: 2px solid gray;
+  width: 300px;
+  height: 250px;
+  box-shadow: 0 4px 16px #cccccc;
+  border-radius: 10px;
+}
+
+.form__header {
+  display: flex;
+}
+.form-wrapper {
+  position: absolute;
+  top: 80px;
+  right: 40px;
+
+  transform: scale(0);
+  transition: 0.25s linear;
+}
+textarea.panel__feedback {
+  width: 250px;
+  height: 150px;
+  resize: none;
+  padding: 5px;
+}
+
+button.send__feedback {
+  width: 100px;
+  height: 30px;
+  background-color: beige;
+  border-radius: 8px;
+  font-family: sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button.close__form {
+  position: absolute;
+  right: -25px;
+  top: -25px;
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.active__chat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1);
+}
+
+.active__btn {
+  transform: scale(0);
+}
+
+/*liker__widget*/
+
+.liker__widget {
+  height: 15vh;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn__block {
+  margin-bottom: 15px;
+}
+
+button.liker__btn {
+  height: 30px;
+  display: block;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  width: 100px;
+  background-color: rgb(122, 3, 27);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.heart-wrapper {
+  display: flex;
+  position: absolute;
+  left: calc(50% - 25px / 2);
+  bottom: 20px;
+}
+
+.heart__icon {
+  width: 25px;
+  height: 25px;
+
+  border: none;
+  background-image: url(../img/heart.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.one {
+  animation: track_1 500ms ease-out 0s;
+}
+.two {
+  animation: track_2 500ms ease-out 0s;
+}
+.three {
+  animation: track_3 500ms ease-out 0s;
+}
+.four {
+  animation: track_4 500ms ease-out 0s;
+}
+
+@keyframes track_1 {
+  0% {
+  }
+  25% {
+    left: calc(50% - 100px / 2);
+    bottom: 65px;
+    opacity: 1;
+  }
+
+  50% {
+    bottom: 115px;
+    opacity: 0.7;
+  }
+
+  75% {
+    left: calc(50% + 50px / 2);
+    bottom: 165px;
+    opacity: 0.3;
+  }
+  100% {
+    bottom: 215px;
+    opacity: 0;
+  }
+}
+
+@keyframes track_2 {
+  0% {
+  }
+  25% {
+    bottom: 65px;
+    opacity: 1;
+  }
+
+  50% {
+    left: calc(50% + 50px / 2);
+    bottom: 115px;
+    opacity: 0.7;
+  }
+
+  75% {
+    left: calc(50% - 100px / 2);
+    bottom: 165px;
+    opacity: 0.3;
+  }
+  100% {
+    bottom: 215px;
+    opacity: 0;
+  }
+}
+
+@keyframes track_3 {
+  0% {
+  }
+  25% {
+    bottom: 65px;
+    opacity: 1;
+  }
+
+  50% {
+    left: calc(50% - 100px / 2);
+    bottom: 115px;
+    opacity: 0.7;
+  }
+
+  75% {
+    left: calc(50% + 50px / 2);
+    bottom: 165px;
+    opacity: 0.3;
+  }
+  100% {
+    bottom: 215px;
+    opacity: 0;
+  }
+}
+
+@keyframes track_4 {
+  0% {
+  }
+  25% {
+    left: calc(50% - 50px / 2);
+    bottom: 65px;
+    opacity: 1;
+  }
+
+  50% {
+    bottom: 115px;
+    opacity: 0.7;
+  }
+
+  75% {
+    left: calc(50% - 75px / 2);
+    bottom: 165px;
+    opacity: 0.3;
+  }
+  100% {
+    bottom: 215px;
+    opacity: 0;
+  }
+}
