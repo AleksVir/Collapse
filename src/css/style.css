@@ -27,6 +27,7 @@ body {
   margin-top: 20px;
   background-color: rgb(255, 255, 255);
   padding: 20px;
+  overflow: hidden; /* Добавляем, чтобы содержимое не вылезало за границы */
 }
 
 button.start__btn {
@@ -36,42 +37,43 @@ button.start__btn {
   font-size: 1.2rem;
   color: white;
   border-radius: 8px;
+  display: block; /* Явно задаём отображение */
+  margin: 0 auto; /* Центрируем кнопку */
 }
 
 p.widget__text {
   border: 1px solid rgb(250, 248, 248);
   border-radius: 3px;
   padding: 5px;
+  margin: 0 0 10px 0; /* Добавляем отступы между абзацами */
 }
 
 .widget__body {
   margin-top: 20px;
   height: 0;
-  margin-bottom: -20px;
-
+  overflow: hidden; /* Обязательно для плавного раскрытия */
   font-size: 1.2rem;
   line-height: 1.4;
-  overflow: hidden;
-  transition: all 0.5s ease 0s;
+  transition: height 0.5s ease; /* Упростили, оставили только height */
 }
 
 .active {
   height: 130px;
   font-size: 1.2rem;
   line-height: 1.4;
-  transition: height 0.5s ease 0s;
+  transition: height 0.5s ease; /* Синхронизировали с .widget__body */
 }
 
 button.form__btn {
   display: block;
-  margin-top: 260px;
+  margin-top: 20px; /* Уменьшили отступ, чтобы не «улетать» за пределы блока */
   width: 50px;
   height: 50px;
   border-radius: 50px;
   background-color: rgb(143, 4, 32);
-  transition: 0.2s linear;
+  transition: transform 0.2s linear, background-color 0.2s linear; /* Уточнили, что анимируем */
+  cursor: pointer; /* Добавили курсор для интерактивности */
 }
-
 /*Chat__widget */
 
 .chat__widget {
